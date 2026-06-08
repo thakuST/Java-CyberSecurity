@@ -1,0 +1,10 @@
+2025-11-01 09:15:23,1,admin,LOGIN,Authentication,User logged in successfully,SUCCESS
+2025-11-01 09:18:47,3,arjun.patel,UPDATE,Employee Management,Updated department of employee_id 5, SUCCESS
+2025-11-01 10:05:12,2,priya.sharma,DELETE,Employee Management,Deleted employee_id 10,SUCCESS
+2025-11-01 10:22:36,4,kavya.reddy,CREATE,Employee Management,Added new employee_id 11,SUCCESS
+2025-11-01 11:01:58,5,nikhil.verma,LOGIN,Authentication,Failed login attempt,FAILED
+2025-11-01 11:15:44,1,admin,RESET_PASSWORD,Authentication,Reset password for employee_id 5,SUCCESS
+2025-11-01 12:10:03,7,rahul.joshi,UPDATE,Employee Management,Updated hire_date for employee_id 8,SUCCESS
+2025-11-01 12:55:21,6,aisha.khan,VIEW,Employee Management,Viewed employee details for employee_id 3,SUCCESS
+2025-11-01 13:30:10,9,vikram.nair,CREATE,Employee Management,Added new employee_id 12,SUCCESS
+2025-11-01 14:05:33,10,tarun.shetty,DELETE,Employee Management,Attempted to delete employee_id 2,FAILED

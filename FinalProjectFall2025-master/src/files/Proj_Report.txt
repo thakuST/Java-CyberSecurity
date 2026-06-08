@@ -1,0 +1,69 @@
+Project Title:
+Employee Management System
+
+Project Overview:
+-----------------
+The Employee Management System is designed to manage employee information for an enterprise. 
+It stores personal details, department assignments, hire and termination dates, reporting hierarchy, 
+and email credentials. The system enables HR, IT, and management teams to efficiently access, update, 
+and analyze employee data.
+
+Objectives:
+-----------
+1. Maintain accurate employee records.
+2. Facilitate reporting hierarchy and manager assignments.
+3. Enable department-wise management and tracking.
+4. Provide a secure system with password protection.
+5. Offer easy deployment and maintainability for enterprise use.
+
+System Architecture:
+--------------------
+1. Frontend: JavaFX desktop application for user interaction.
+2. Backend: Node.js/Express API to handle business logic and database operations.
+3. Database: MySQL to store employee records securely.
+4. Version Control: Git for source code management.
+
+Database Design:
+----------------
+- Employee Table:
+    Columns: employee_id, first_name, last_name, department, hire_date, end_date, manager_id, email, password_hash
+- Key Relationships: 
+    - manager_id references employee_id
+- Backup and Restore procedures implemented using MySQL dump commands.
+
+Technologies Used:
+------------------
+- Programming Languages: Java, JavaScript
+- Frameworks: JavaFX, Node.js, Express
+- Database: MySQL
+- Tools: IntelliJ IDEA, Git, npm
+
+Key Features:
+-------------
+1. Add, update, and delete employee records.
+2. Track active and inactive employees via hire_date and end_date.
+3. Search employees by department, manager, or name.
+4. Secure password hashing for all users.
+5. Generate basic reports on employee distribution by department.
+
+Testing & Validation:
+---------------------
+- Unit testing of backend API endpoints.
+- Manual testing of JavaFX frontend.
+- Database integrity checks performed before and after data operations.
+
+Deployment:
+-----------
+- Backend deployed locally using Node.js server.
+- Frontend deployed using JavaFX runtime.
+- MySQL database hosted locally with backup procedures in place.
+
+Maintenance Guidelines:
+-----------------------
+Refer to Maintenance.txt for detailed instructions on deployment, updates, backups, and troubleshooting.
+
+Conclusion:
+-----------
+The Employee Management System provides a reliable and maintainable solution for managing employee 
+records in an enterprise setting. It ensures data accuracy, security, and operational efficiency. 
+The system is scalable and can be integrated with other enterprise modules in the future.

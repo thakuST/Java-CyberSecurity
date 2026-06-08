@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.AdminController"
+            fx:id="rootPane"
+            prefHeight="600"
+            prefWidth="900"
+            style="-fx-background-color:#f2f2f2;">
+
+    <top>
+        <HBox fx:id="headerBar"
+              alignment="CENTER_LEFT"
+              spacing="20"
+              prefHeight="50"
+              style="-fx-background-color:#2A3F54;">
+            <padding>
+                <Insets top="10" bottom="10" left="20" right="20"/>
+            </padding>
+
+            <Label text="Admin Dashboard" style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold;"/>
+
+            <Pane HBox.hgrow="ALWAYS"/>
+
+            <Label fx:id="profileLabel" text="Profile" style="-fx-text-fill: white; -fx-font-size: 14; -fx-cursor: hand;"
+                   onMouseClicked="#showProfileMenu"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="20" alignment="TOP_CENTER">
+            <padding>
+                <Insets top="20" left="20" right="20" bottom="20"/>
+            </padding>
+
+            
+            <HBox spacing="15" alignment="CENTER">
+
+                <VBox alignment="CENTER"
+                      spacing="5"
+                      prefWidth="180"
+                      style="-fx-background-color: #e8f3ff; -fx-background-radius: 10; -fx-padding: 15;">
+                    <Label text="Open Tickets" style="-fx-font-size: 14;-fx-font-weight: bold;"/>
+                    <Label fx:id="openTicketsLabel" text="0" style="-fx-font-size: 22;"/>
+                </VBox>
+
+                <VBox alignment="CENTER"
+                      spacing="5"
+                      prefWidth="180"
+                      style="-fx-background-color: #fff4e0; -fx-background-radius: 10; -fx-padding: 15;">
+                    <Label text="In-Progress" style="-fx-font-size: 14; -fx-font-weight: bold;"/>
+                    <Label fx:id="inProgressTicketsLabel" text="0" style="-fx-font-size: 22;"/>
+                </VBox>
+
+                <VBox alignment="CENTER"
+                      spacing="5"
+                      prefWidth="180"
+                      style="-fx-background-color: #e9ffe8; -fx-background-radius: 10; -fx-padding: 15;">
+                    <Label text="Closed Tickets" style="-fx-font-size: 14; -fx-font-weight: bold;"/>
+                    <Label fx:id="closedTicketsLabel" text="0" style="-fx-font-size: 22;"/>
+                </VBox>
+
+            </HBox>
+
+            <!-- Filters -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Status:"/>
+                <ComboBox fx:id="statusFilter" prefWidth="140"/>
+
+                <Label text="Severity:"/>
+                <ComboBox fx:id="severityFilter" prefWidth="150"/>
+
+                <Label text="Search:"/>
+                <TextField fx:id="searchField"
+                           promptText="Ticket ID or email"
+                           prefWidth="220"/>
+
+                <Button text="Refresh" onAction="#refreshTickets"/>
+            </HBox>
+
+           
+            <TableView fx:id="ticketTable"
+                       prefHeight="350"
+                       prefWidth="840">
+                <columns>
+                    <TableColumn fx:id="ticketIdColumn" text="Ticket ID" prefWidth="90"/>
+                    <TableColumn fx:id="userColumn" text="User" prefWidth="150"/>
+                    <TableColumn fx:id="typeColumn" text="Type" prefWidth="150"/>
+                    <TableColumn fx:id="severityColumn" text="Severity" prefWidth="100"/>
+                    <TableColumn fx:id="statusColumn" text="Status" prefWidth="100"/>
+                    <TableColumn fx:id="createdAtColumn" text="Created At" prefWidth="160"/>
+                    <TableColumn fx:id="assignedToColumn" text="Assigned To" prefWidth="120"/>
+                </columns>
+            </TableView>
+
+           
+            <HBox alignment="CENTER_RIGHT" spacing="10.0" prefWidth="840.0">
+
+ <Label text="Change Status:" />
+<ComboBox fx:id="statusUpdateCombo" prefWidth="140.0"/>
+<Button text="Update" onAction="#updateSelectedTicketStatus"/>
+<Button text="View File Access" onAction="#showFileAccess"/>
+<Button fx:id="viewEmployeesButton" text="View Employee List" onAction="#openEmployeeList" style="-fx-background-color: #2A3F54; -fx-text-fill: white;-fx-padding: 8 16 8 16;"/>
+</HBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>

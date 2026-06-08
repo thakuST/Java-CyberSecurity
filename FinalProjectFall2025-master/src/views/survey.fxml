@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.SurveyController"
+            prefWidth="600" prefHeight="400">
+
+    <center>
+        <BarChart fx:id="alertsChart">
+            <xAxis>
+                <CategoryAxis label="Activity Type"/>
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Number of Alerts"/>
+            </yAxis>
+        </BarChart>
+    </center>
+
+</BorderPane>

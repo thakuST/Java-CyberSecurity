@@ -1,0 +1,56 @@
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="900" prefWidth="900"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.LoginController"
+            style="-fx-background-color: #0A1A40;">
+
+    <children>
+        <VBox alignment="CENTER" layoutX="195" prefHeight="592" prefWidth="470" spacing="10">
+
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+         
+            <ImageView fitHeight="120" fitWidth="120" preserveRatio="true">
+                <image>
+                    <Image url="@images/Credentials.png"/>
+                </image>
+            </ImageView>
+
+            
+            <TextField fx:id="usernameField" maxWidth="250" promptText="Username(email)"/>
+
+            <PasswordField fx:id="passwordField" maxWidth="250" promptText="Password"/>
+
+            <ComboBox fx:id="roleField" maxWidth="250" promptText="Role">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Manager"/>
+                        <String fx:value="Admin"/>
+                        <String fx:value="Employee"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+
+            
+            <Button text="Login" prefWidth="120" onAction="#login"
+            style="-fx-background-color: #2A3F54; -fx-text-fill: white; -fx-font-size: 14;" />
+
+            <Label fx:id="lblError" 
+            text=" "
+            textFill="red"
+             maxWidth="250" wrapText="true"/>
+
+        </VBox>
+    </children>
+</AnchorPane>

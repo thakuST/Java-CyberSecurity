@@ -1,0 +1,94 @@
+Project Overview
+----------------
+Project Name: Employee Management System
+Purpose: This system manages employee data including personal details, department assignments, and reporting hierarchy.
+Tech Stack:
+  - Frontend: JavaFX
+  - Backend: Node.js / Express
+  - Database: MySQL
+  - Version Control: Git
+
+System Requirements
+-------------------
+- OS: Windows 10+, macOS 10.15+, Linux
+- Java JDK 17+
+- Node.js 18+
+- MySQL 14+
+- Recommended RAM: 8GB+
+- Disk Space: 2GB+
+
+Deployment Instructions
+-----------------------
+1. Clone the repository:
+   git clone <repository_url>
+2. Install backend dependencies:
+   cd backend
+   npm install
+3. Configure environment variables:
+   - DATABASE_URL=postgres://username:password@localhost:5432/employee_db
+   - PORT=3000
+4. Start the backend server:
+   npm start
+5. Open the frontend project in IntelliJ and run the main JavaFX class.
+6. Ensure the database is running before starting the application.
+
+Database Maintenance
+--------------------
+- Backup Database:
+   pg_dump -U <username> employee_db > employee_backup.sql
+- Restore Database:
+   psql -U <username> -d employee_db -f employee_backup.sql
+- Adding Columns or Tables:
+   ALTER TABLE <table_name> ADD COLUMN <column_name> <data_type>;
+   Always backup before making schema changes.
+- Sample Employee Table Structure:
+   employee(employee_id SERIAL PRIMARY KEY, first_name VARCHAR(50), last_name VARCHAR(50), department VARCHAR(50), hire_date DATE, end_date DATE, manager_id INT, email VARCHAR(100));
+
+Codebase Structure
+------------------
+- backend/        : Node.js API
+- frontend/       : JavaFX application
+- database/       : SQL scripts and migrations
+- docs/           : Project documentation
+- tests/          : Unit and integration tests
+
+Common Tasks / Operations
+-------------------------
+- Start application: Run backend server, then run frontend JavaFX app
+- Stop application: Close frontend app, then stop backend server (Ctrl+C)
+- Update codebase:
+   git pull origin main
+   npm install (if backend dependencies updated)
+- Run database migrations (if applicable): See database/migrations folder
+
+Troubleshooting
+---------------
+- Backend server not starting: Check PORT availability and environment variables
+- Database connection failed: Ensure MySQL service is running and credentials in DATABASE_URL are correct
+- JavaFX UI not loading: Ensure Java JDK is properly installed and configured in IntelliJ
+- Logs Location:
+   backend/logs/app.log
+   frontend/logs/ui.log
+
+Version Control & Updates
+-------------------------
+- Git branching strategy:
+   main - stable releases
+   dev - ongoing development
+   feature/* - feature branches
+- Pull Requests: Merge dev into main after successful testing
+- Hotfixes: Branch from main, merge back to main and dev
+
+Security & Access
+-----------------
+- Roles: Employee, Manager, Admin
+- Sensitive data: Passwords are hashed; do not store plaintext
+- Reset Passwords: Use backend API endpoint /reset-password
+- Database access: Only authorized personnel should access production DB
+
+References
+----------
+- API Documentation: docs/api.md
+- Database ER Diagram: docs/ER_Diagram.png
+- User Manual: docs/User_Manual.pdf
+
